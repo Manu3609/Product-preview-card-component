@@ -1,0 +1,128 @@
+:root {
+    --DarkCyan: hsl(158, 36%, 37%);
+    --VeryDarkCyan: hsl(156, 42%, 18%);
+    --Cream: hsl(30, 38%, 92%);
+    --VeryDarkBlue: hsl(212, 21%, 14%);
+    --DarkGrayishBlue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --Monserrat: Monserrat;
+    --Fraunces: Fraunces;
+}
+@font-face {
+    font-family: Monserrat;
+    src: url(../fonts/montserrat\ full\ version/Montserrat-Regular.otf);
+}
+@font-face {
+    font-family: Fraunces;
+    src: url(../fonts/fraunces/frauncessoftwonkopszwght.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body  {
+    font-family: var(--Monserrat);
+    color: var(--DarkGrayishBlue);
+    background: var(--Cream);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.card {
+    background: var(--White);
+    border-radius: .7rem;
+    display: flex;
+    max-width: 36rem;
+    box-shadow: 0 .5rem 1rem #00000005;
+    margin-inline: 1rem;
+}
+.card .left {
+    background-image: url(../images/image-product-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    border-top-left-radius: .7rem;
+    border-bottom-left-radius: .7rem;
+}
+.card .right {
+    padding: 2rem;
+    width: 50%;
+}
+.card .right h3 {
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .3rem;
+}
+.card .right h1 {
+    font-family: var(--Fraunces);
+}
+.card .right>h1 {
+    margin-block: 1.2rem;
+    line-height: .95;
+    text-transform: capitalize;
+    color: var(--VeryDarkBlue);
+}
+.card .right>p {
+    font-size: .82rem;
+    line-height: 1.6;
+    margin-bottom: 1.3rem;
+}
+.card .right .price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-block: 1.5rem 1rem;
+}
+.card .right .price h1 {
+    color: var(--DarkCyan);
+    font-size: 1.8rem;
+}
+.card .right .price h4 {
+    text-decoration: line-through;
+    font-size: .8rem;
+}
+.card .right .button {
+    display: flex;
+    gap: .7rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--DarkCyan);
+    color: var(--White);
+    padding-block: 1rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .05rem;
+    transition: .5s ease;
+}
+.card .right .button:hover {
+    background: var(--VeryDarkCyan);
+}
+@media only screen and (max-width: 460px) {
+    body {
+        width: auto;
+    }
+    .card {
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .card .left,
+    .card .right {
+        width: 100%;
+    }
+    .card .left {
+        height: 20rem;
+        border-top-left-radius: .8rem;
+        border-top-right-radius: .8rem;
+        border-bottom-left-radius: 0;
+        background-image: url(../images/image-product-mobile.jpg);
+    }
+}
